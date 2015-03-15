@@ -1,0 +1,25 @@
+<h1>Freedom Wall</h1>
+<h3> Web Camp 2015</h3>
+
+<div id="comment_form">
+  <%= form_for :message, url: messages_path do |f| %>
+  <div id="comment_box">
+    <%= f.text_area :message%>
+  </div>
+  <div id="comment_save">
+    <%= f.text_field :username %>
+    <%= f.submit %>
+  </div>
+  <% end %>
+</div>
+<div style="margin-top: 20px;" id="comment_board">
+
+  <div id="comment_search">
+    <input type="text" name="keyword" value="input keyword to search" />
+    <button type="button" onclick="alert('Searching the comment database!')">Search</button> 
+  </div>
+  <div style ="border: 1px solid black; width: 200 px; margin-top: 20px; width: 400px;" id="comment_1">
+    <span class="username"> juan: </span>
+    <p class="comment">Sample comment!</p>
+  </div>
+</div>

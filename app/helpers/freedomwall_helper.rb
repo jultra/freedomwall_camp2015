@@ -1,0 +1,2 @@
+module FreedomwallHelper
+end
