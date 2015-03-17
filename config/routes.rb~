@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :freedomwall
   resources :messages
 
-  root :to =>'freedomwall#index'
+  root 'freedomwall#index'
 
   #post '/search' => 'freedomwall#search', as: 'search'
 

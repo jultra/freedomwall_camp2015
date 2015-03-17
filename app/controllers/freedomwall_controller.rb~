@@ -1,30 +1,28 @@
 require 'set'
-class MessagesController < ApplicationController
-  
+class FreedomwallController < ApplicationController
+  # set per_page globally
+  #WillPaginate.per_page = 30
+
   @@usernames_db = Hash.new
   
   def initialize
     prepare_username_db 
   end
 
-  def create    
-    username = params[:message][:username]
-    suggested_username = suggest_username username
-    
-    if username != suggested_username
-      @message = Message.new(params.require(:message).permit(:message, :username))
-      
-    else
-      @message = Message.create!(params.require(:message).permit(:message, :username))
-      @message.save
-      add_username_to_db(username)
-    end
-
-    @message
+  def index
     @messages = Message.paginate(page: params[:page], per_page: 20)
-    flash[:suggested_username] = suggested_username
+  end
+
+  def create
+    keyword = params[:search][:keyword]
+    @messages = Message.where("username like :keyword or message like :keyword",\
+                      {:keyword => "%#{keyword}%"}).
+                      paginate(page: params[:page], per_page: 20)
+      
     render 'freedomwall/index'
   end
+
+  private
 
   def prepare_username_db
     if @@usernames_db.length == 0

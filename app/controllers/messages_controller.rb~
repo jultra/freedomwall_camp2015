@@ -17,7 +17,6 @@ class MessagesController < ApplicationController
     else
       @message = Message.create!(params.require(:message).permit(:message, :username))
       @message.save
-      add_username_to_db(username)
     end
 
     @message

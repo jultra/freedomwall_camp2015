@@ -57,9 +57,6 @@ hr{
     	margin: 10px auto;
 	display: block;
 }
-#comment_save{
- 	display: inline;
-}
 #message-board{
 	width: 80%;
 	padding: 10px;
