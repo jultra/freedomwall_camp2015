@@ -1,4 +1,5 @@
 require 'set'
+
 class FreedomwallController < ApplicationController
   # set per_page globally
   #WillPaginate.per_page = 30
@@ -6,7 +7,8 @@ class FreedomwallController < ApplicationController
   @@usernames_db = Hash.new
   
   def initialize
-    prepare_username_db 
+    prepare_username_db
+    super 
   end
 
   def index

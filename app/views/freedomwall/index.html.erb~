@@ -3,7 +3,7 @@
 		<a href="/"> <img  class="img img-thumbnail" src="assets/flag.png"/></a>
 	</div>
 	<div class="post-board" id="comment_form">
-	  <%= form_for :message, class:'form-control', url: freedomwall_create_path do |f| %>
+	  <%= form_for :message, class:'form-control', url: freedomwall_index_path do |f| %>
 	  
 	<div id="comment_box" class="form-group">
 	    <%= f.text_area :message , id: 'message', class:'form-control', placeholder:"Tell us what is on your mind."%>
