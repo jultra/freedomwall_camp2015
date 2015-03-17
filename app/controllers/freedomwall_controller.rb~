@@ -4,12 +4,6 @@ class FreedomwallController < ApplicationController
   # set per_page globally
   #WillPaginate.per_page = 30
 
-  @@usernames_db = Hash.new
-  
-  def initialize
-    prepare_username_db 
-  end
-
   def index
     @messages = Message.paginate(page: params[:page], per_page: 20)
   end

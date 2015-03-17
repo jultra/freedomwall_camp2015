@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
   
   def initialize
     prepare_username_db 
+    super
   end
 
   def create    
@@ -13,7 +14,7 @@ class MessagesController < ApplicationController
     
     if username != suggested_username
       @message = Message.new(params.require(:message).permit(:message, :username))
-      
+      flash[:suggested_username] = suggested_username
     else
       @message = Message.create!(params.require(:message).permit(:message, :username))
       @message.save
@@ -22,8 +23,7 @@ class MessagesController < ApplicationController
 
     @message
     @messages = Message.paginate(page: params[:page], per_page: 20)
-    flash[:suggested_username] = suggested_username
-    render 'freedomwall/index'
+    redirect_to freedomwall_index_path
   end
 
   def prepare_username_db
