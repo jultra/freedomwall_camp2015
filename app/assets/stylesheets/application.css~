@@ -64,6 +64,11 @@ hr{
 	width: 80%;
 	padding: 10px;
 	margin: 10px auto;
+  	display: absolute;
+}
+
+#message-board  {
+	display: inline-block;
 }
 #message-board h3{
 	padding: 10px;
@@ -73,7 +78,7 @@ hr{
 	border: 1px solid #d3d3d3;
 	border-radius: 5px;
 	margin: 5px;
-        width: 150px;
+        width: 200px;
         height: 150px;
         display: inline-block;
 	background-color: #ffffff;
@@ -93,7 +98,9 @@ hr{
 	width: 80%;
 }
 
-
+.username{
+        color: green;
+}
 .apple_pagination {
   background: transparent;
   text-align: center;
@@ -120,3 +127,4 @@ hr{
     color: black; }
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
+

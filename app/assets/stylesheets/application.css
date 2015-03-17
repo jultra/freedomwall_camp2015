@@ -64,7 +64,9 @@ hr{
 	width: 80%;
 	padding: 10px;
 	margin: 10px auto;
+  	display: absolute;
 }
+
 #message-board h3{
 	padding: 10px;
 }
@@ -93,7 +95,9 @@ hr{
 	width: 80%;
 }
 
-
+.username{
+        color: green;
+}
 .apple_pagination {
   background: transparent;
   text-align: center;
@@ -120,3 +124,4 @@ hr{
     color: black; }
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
+
