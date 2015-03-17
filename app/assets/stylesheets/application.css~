@@ -57,6 +57,9 @@ hr{
     	margin: 10px auto;
 	display: block;
 }
+#comment_save{
+ 	display: inline;
+}
 #message-board{
 	width: 80%;
 	padding: 10px;
@@ -70,6 +73,9 @@ hr{
 	border: 1px solid #d3d3d3;
 	border-radius: 5px;
 	margin: 5px;
+        width: 150px;
+        height: 150px;
+        display: inline-block;
 	background-color: #ffffff;
 }
 .post .pull-left span{
